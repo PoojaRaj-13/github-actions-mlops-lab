@@ -26,7 +26,7 @@ jobs:
     
     - name: Upload test results
       if: always()
-      uses: actions/upload-artifact@v4  # Changed from v2 to v4
+      uses: actions/upload-artifact@v4
       with:
         name: test-results
         path: pytest-report.xml
@@ -38,15 +38,3 @@ jobs:
     - name: Notify on failure
       if: failure()
       run: echo "Tests failed"
-```
-
-**The only change:** Line with `uses: actions/upload-artifact@v4` (changed from `@v2` to `@v4`)
-
-## Commit Message:
-```
-Fix CI: Update upload-artifact action to v4
-```
-
-or
-```
-Update GitHub Actions to use upload-artifact@v4
