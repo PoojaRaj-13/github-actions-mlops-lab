@@ -1,5 +1,5 @@
-name: Testing with Pytest
-run-nam: Pytest
+name: Testing with Pytest - Extended Calculator
+run-name: Pytest
 on:
   push:
     branches:
