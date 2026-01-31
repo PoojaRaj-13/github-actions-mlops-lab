@@ -6,13 +6,13 @@ def fun1(x, y):
         y (int/float): Second number.
     Returns:
         int/float: Sum of x and y.
-        Raises:
+    Raises:
         ValueError: If x or y is not a number.
     """
     if not (isinstance(x, (int, float)) and isinstance(y, (int, float))):
         raise ValueError("Both inputs must be numbers.")
-    
     return x + y
+
 
 def fun2(x, y):
     """
@@ -22,12 +22,13 @@ def fun2(x, y):
         y (int/float): Second number.
     Returns:
         int/float: Difference of x and y.
-        Raises:
+    Raises:
         ValueError: If x or y is not a number.
     """
     if not (isinstance(x, (int, float)) and isinstance(y, (int, float))):
         raise ValueError("Both inputs must be numbers.")
     return x - y
+
 
 def fun3(x, y):
     """
@@ -37,14 +38,15 @@ def fun3(x, y):
         y (int/float): Second number.
     Returns:
         int/float: Product of x and y.
-        Raises:
+    Raises:
         ValueError: If either x or y is not a number.
     """
     if not (isinstance(x, (int, float)) and isinstance(y, (int, float))):
         raise ValueError("Both inputs must be numbers.")
     return x * y
 
-def fun4(x,y,z):
+
+def fun4(x, y, z):
     """
     Adds three numbers together.
     Args:
@@ -53,12 +55,27 @@ def fun4(x,y,z):
         z (int/float): Third number.
     Returns:
         int/float: Sum of x, y and z.
+    Raises:
+        ValueError: If any input is not a number.
     """
-    total_sum = x + y + z
-    return total_sum
+    if not all(isinstance(i, (int, float)) for i in (x, y, z)):
+        raise ValueError("All inputs must be numbers.")
+    return x + y + z
 
 
-# f1_op = fun1(2,3)
-# f2_op = fun2(2,3)
-# f3_op = fun3(2,3)
-# f4_op = fun4(f1_op,f2_op,f3_op)
+def fun5(x, y):
+    """
+    Divides x by y.
+    Args:
+        x (int/float): Numerator.
+        y (int/float): Denominator.
+    Returns:
+        float: Result of division.
+    Raises:
+        ValueError: If inputs are invalid or division by zero.
+    """
+    if not (isinstance(x, (int, float)) and isinstance(y, (int, float))):
+        raise ValueError("Both inputs must be numbers.")
+    if y == 0:
+        raise ValueError("Division by zero is not allowed.")
+    return x / y
