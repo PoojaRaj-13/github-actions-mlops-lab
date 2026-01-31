@@ -29,3 +29,10 @@ def fun5(x, y):
     if y == 0:
         raise ValueError("Division by zero is not allowed.")
     return x / y
+
+def fun6(x, y):
+    """Returns x to the power of y."""
+    if not (isinstance(x, (int, float)) and isinstance(y, (int, float))):
+        raise ValueError("Both inputs must be numbers.")
+    return x ** y
+    
